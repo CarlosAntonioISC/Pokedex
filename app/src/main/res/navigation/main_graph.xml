@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.pokedex.view.homeFragment.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/favorites_fragment"
+        android:name="com.example.pokedex.view.favoritesFragment.FavoritesFragment"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/random_pokemon_fragment"
+        android:name="com.example.pokedex.view.randomPokemonFragment.RandomPokemonFragment"
+        tools:layout="@layout/fragment_random_pokemon" />
+</navigation>
