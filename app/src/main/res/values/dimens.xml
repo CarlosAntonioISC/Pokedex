@@ -3,4 +3,5 @@
     <dimen name="sizeImagePokemonItem">130dp</dimen>
     <dimen name="textSizeTextItemPokemon">28sp</dimen>
     <dimen name="heightCardViewPokemon">150dp</dimen>
+    <dimen name="sizeProgressBar">100dp</dimen>
 </resources>
