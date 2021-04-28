@@ -1,14 +1,18 @@
 package com.example.pokedex.view.homeFragment
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedex.R
 import com.example.pokedex.domain.models.Pokemon
+import com.example.pokedex.domain.models.PokemonInfo
 import com.example.pokedex.view.base.BaseViewHolder
 
-class HomeAdapter(private val listPokemon: List<Pokemon>,
-                  private val onItemClickListener: OnPokemonClickListener)
+class HomeAdapter(private var listPokemon: MutableList<PokemonInfo>,
+                  private val onItemClickListener: OnPokemonClickListener,
+                  private val context: Context
+)
     : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -21,7 +25,7 @@ class HomeAdapter(private val listPokemon: List<Pokemon>,
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         when (holder) {
-            is HomeViewHolder -> holder.bind(listPokemon[position], position)
+            is HomeViewHolder -> holder.bind(listPokemon[position], position, context)
         }
     }
 }

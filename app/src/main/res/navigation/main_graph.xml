@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/home_fragment"
         android:name="com.example.pokedex.view.homeFragment.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_detailPokemonFragment"
+            app:destination="@id/detail_pokemon_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/favorites_fragment"
         android:name="com.example.pokedex.view.favoritesFragment.FavoritesFragment"
@@ -17,4 +21,9 @@
         android:id="@+id/random_pokemon_fragment"
         android:name="com.example.pokedex.view.randomPokemonFragment.RandomPokemonFragment"
         tools:layout="@layout/fragment_random_pokemon" />
+    <fragment
+        android:id="@+id/detail_pokemon_fragment"
+        android:name="com.example.pokedex.view.detailPokemon.DetailPokemonFragment"
+        android:label="fragment_detail_pokemon"
+        tools:layout="@layout/fragment_detail_pokemon" />
 </navigation>

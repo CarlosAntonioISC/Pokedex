@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:listitem="@layout/pokemon_item"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         android:orientation="vertical"
         android:layout_below="@+id/appBarLayout"
@@ -47,19 +47,11 @@
         android:layout_alignParentBottom="true"
         >
         <ProgressBar
+            android:visibility="gone"
             android:id="@+id/pbFragmentHome"
             android:layout_width="@dimen/sizeProgressBar"
             android:layout_height="@dimen/sizeProgressBar"
             android:layout_gravity="center"
-            android:indeterminateTint="@color/blue"
-            />
-
-        <ProgressBar
-            android:id="@+id/pbLoadingItems"
-            android:layout_width="@dimen/sizeProgressBar"
-            android:layout_height="@dimen/sizeProgressBar"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="20dp"
             android:indeterminateTint="@color/blue"
             />
     </FrameLayout>

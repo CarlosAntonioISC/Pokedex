@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="sizeImagePokemonItem">130dp</dimen>
-    <dimen name="textSizeTextItemPokemon">28sp</dimen>
-    <dimen name="heightCardViewPokemon">150dp</dimen>
-    <dimen name="sizeProgressBar">100dp</dimen>
+    <dimen name="sizeImagePokemonItem">110dp</dimen>
+    <dimen name="textSizeTextItemPokemon">22sp</dimen>
+    <dimen name="heightCardViewPokemon">120dp</dimen>
+    <dimen name="sizeProgressBar">70dp</dimen>
 </resources>

@@ -12,7 +12,6 @@ class HomeViewModel(repo: RepoPokemon): ViewModel() {
 
     val getPokemonList = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
-
         try {
             emit(repo.getPokemonList())
         } catch (e: Exception) {

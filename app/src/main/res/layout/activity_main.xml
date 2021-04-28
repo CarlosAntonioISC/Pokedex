@@ -6,8 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".view.MainActivity">
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
@@ -15,7 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:itemBackground="@color/blue"
+        app:elevation="16dp"
+        app:labelVisibilityMode="unlabeled"
         />
 
     <androidx.fragment.app.FragmentContainerView
