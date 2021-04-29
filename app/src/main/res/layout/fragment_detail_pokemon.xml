@@ -1,15 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".view.detailPokemon.DetailPokemonFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tvNamePokemon"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+
+                <ImageView
+                    android:id="@+id/ivOvalPokemon"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/shape_pokemon" />
+
+                <TextView
+                    android:id="@+id/tvNamePokemon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/margin_default"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/namePokemonDetail"
+                    android:textStyle="bold"
+                    tools:text="Pikachu" />
+
+                <TextView
+                    android:id="@+id/tvIdPokemon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvNamePokemon"
+                    android:layout_marginStart="@dimen/margin_default"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/namePokemonDetail"
+                    android:textStyle="bold"
+                    tools:text="#1" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/states_ic_fav"
+                    android:buttonTint="@android:color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"/>
+
+                <ImageView
+                    android:id="@+id/ivPokemon"
+                    android:layout_width="@dimen/sizeImagePokemonDetail"
+                    android:layout_height="@dimen/sizeImagePokemonDetail"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    tools:src="@drawable/pokemon" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                style="@style/textTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubtitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                style="@style/textTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubtitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sprites"
+                style="@style/textTitle"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginStart="@dimen/margin_default"
+                >
+
+                <ImageView
+                    android:id="@+id/ivSprite1"
+                    android:contentDescription="@string/sprites"
+                    android:layout_width="@dimen/sizeSpritePokemon"
+                    android:layout_height="@dimen/sizeSpritePokemon" />
+
+                <ImageView
+                    android:id="@+id/ivSprite2"
+                    android:contentDescription="@string/sprites"
+                    android:layout_width="@dimen/sizeSpritePokemon"
+                    android:layout_height="@dimen/sizeSpritePokemon" />
+
+                <ImageView
+                    android:id="@+id/ivSprite3"
+                    android:contentDescription="@string/sprites"
+                    android:layout_width="@dimen/sizeSpritePokemon"
+                    android:layout_height="@dimen/sizeSpritePokemon" />
+
+                <ImageView
+                    android:id="@+id/ivSprite4"
+                    android:contentDescription="@string/sprites"
+                    android:layout_width="@dimen/sizeSpritePokemon"
+                    android:layout_height="@dimen/sizeSpritePokemon" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/abilities"
+                style="@style/textTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvAbilities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubtitle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moves"
+                style="@style/textTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvMoves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textSubtitle"
+                />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/include_logo"
+        layout="@layout/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        />
+</RelativeLayout>

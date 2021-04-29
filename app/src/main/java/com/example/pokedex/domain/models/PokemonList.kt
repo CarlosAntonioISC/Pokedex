@@ -15,8 +15,10 @@ data class PokemonListResponse (
         val results: MutableList<PokemonInfo>
 )
 
+@Parcelize
 data class PokemonInfo (
         val name: String = "",
         val url: String = "",
-        var image: String = ""
-)
+        var image: String = "",
+        var color: Int = 0
+): Parcelable

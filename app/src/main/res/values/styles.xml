@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textTitle">
+        <item name="android:textSize">@dimen/textSizerTitlePokemon</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/margin_default</item>
+        <item name="android:layout_marginStart">@dimen/margin_default</item>
+    </style>
+    <style name="textSubtitle">
+        <item name="android:textSize">@dimen/textSizeSubtitlePokemon</item>
+        <item name="android:layout_marginStart">@dimen/margin_default</item>
+        <item name="android:layout_marginTop">@dimen/margin_min</item>
+    </style>
+</resources>

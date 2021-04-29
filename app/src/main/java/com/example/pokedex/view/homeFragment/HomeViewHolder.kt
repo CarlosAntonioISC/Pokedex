@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.palette.graphics.Palette
-import androidx.palette.graphics.Target
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -14,6 +13,7 @@ import com.example.pokedex.databinding.PokemonItemBinding
 import com.example.pokedex.domain.models.PokemonInfo
 import com.example.pokedex.view.base.BaseViewHolder
 import com.example.pokedex.R
+import java.util.*
 
 
 class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonClickListener)
@@ -24,8 +24,7 @@ class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonC
     override fun bind(item: PokemonInfo, position: Int, context: Context) {
 
         with(binding) {
-            tvNamePokemon.text = item.name.capitalize()
-
+            tvNamePokemon.text = item.name.capitalize(Locale.ENGLISH)
             Glide.with(context)
                     .asBitmap()
                     .load(item.image)
@@ -35,7 +34,8 @@ class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonC
 
                             Palette.from(resource).generate {
                                 val color = it?.getMutedColor(ContextCompat.getColor(context, R.color.default_background_color))
-                                cvPokemon.setCardBackgroundColor(color!!)
+                                item.color = color!!
+                                cvPokemon.setCardBackgroundColor(color)
                             }
                         }
                         override fun onLoadCleared(placeholder: Drawable?) {

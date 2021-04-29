@@ -6,6 +6,7 @@ import com.example.pokedex.utils.Resource
 
 interface DataSource {
     suspend fun getPokemonListToAPI(): Resource<MutableList<PokemonInfo>>
+    suspend fun getPokemonFullInfoToAPI(name: String): Resource<Pokemon>
 }
 
 

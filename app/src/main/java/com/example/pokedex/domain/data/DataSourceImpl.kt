@@ -1,6 +1,7 @@
 package com.example.pokedex.domain.data
 
 import com.example.pokedex.domain.contracts.DataSource
+import com.example.pokedex.domain.models.Pokemon
 import com.example.pokedex.domain.models.PokemonInfo
 import com.example.pokedex.utils.Resource
 import com.example.pokedex.utils.RetrofitClient
@@ -9,7 +10,7 @@ class DataSourceImpl: DataSource {
 
     override suspend fun getPokemonListToAPI(): Resource<MutableList<PokemonInfo>> {
 
-        val pokemonListResponse = RetrofitClient.webService.getPokemonList(limit = 1118, offset =  0)
+        val pokemonListResponse = RetrofitClient.webService.getPokemonList(limit = 1118, offset = 0)
 
         //get the pokemon image in another api passing the pokemon id
         pokemonListResponse.results.forEach { pokeInfo ->
@@ -19,8 +20,13 @@ class DataSourceImpl: DataSource {
         }
 
         return Resource.Success(
-            pokemonListResponse.results
+                pokemonListResponse.results
         )
     }
 
+    override suspend fun getPokemonFullInfoToAPI(name: String): Resource<Pokemon> {
+
+        val result = RetrofitClient.webService.getPokemonByName(name)
+        return Resource.Success(result)
+    }
 }

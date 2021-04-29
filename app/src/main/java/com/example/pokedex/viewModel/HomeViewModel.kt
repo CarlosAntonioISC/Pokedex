@@ -10,6 +10,7 @@ import java.lang.Exception
 
 class HomeViewModel(repo: RepoPokemon): ViewModel() {
 
+
     val getPokemonList = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
