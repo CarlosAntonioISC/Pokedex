@@ -13,5 +13,6 @@
     <dimen name="margin_default">10dp</dimen>
     <dimen name="margin_min">4dp</dimen>
     <dimen name="sizeImagePokemonDetail">220dp</dimen>
+    <dimen name="mainTitle">28sp</dimen>
 
 </resources>

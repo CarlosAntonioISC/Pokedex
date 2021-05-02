@@ -6,7 +6,7 @@ import com.example.pokedex.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception
 
-class DetailPokemonViewModel(val repo: RepoPokemon): ViewModel() {
+class DetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
 
     private val  namePokemon = MutableLiveData<String>()
 
@@ -14,7 +14,7 @@ class DetailPokemonViewModel(val repo: RepoPokemon): ViewModel() {
         namePokemon.value = name
     }
 
-    val getPokemonInfo = namePokemon.switchMap {
+    val getPokemonInfo = namePokemon.distinctUntilChanged().switchMap {
         liveData(Dispatchers.IO) {
             emit(Resource.Loading())
             try {

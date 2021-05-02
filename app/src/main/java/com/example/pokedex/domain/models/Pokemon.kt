@@ -3,11 +3,13 @@ import com.google.gson.annotations.SerializedName
 
 data class Pokemon (
         val abilities: List<Ability>,
+        val forms: List<Form>,
         val id: Int,
         val moves: List<Moves>,
         val sprites: Sprites,
         val types: List<Type>,
-        val weight: Long
+        val weight: Long,
+
 )
 
 data class Moves(val move: Move)
@@ -19,6 +21,11 @@ data class Ability (
         @SerializedName("is_hidden")
         val isHidden: Boolean,
         val slot: Long
+)
+
+data class Form (
+        val name: String,
+        val url: String
 )
 
 data class Species (
@@ -40,7 +47,20 @@ data class Sprites (
 
         @SerializedName("front_shiny")
         val frontShiny: String,
+
+        val other: Other
 )
+
+data class Other (
+        @SerializedName("official-artwork")
+        val officialArtwork: OfficialArtwork
+)
+
+data class OfficialArtwork (
+        @SerializedName("front_default")
+        val image: String
+)
+
 
 
 data class Type (

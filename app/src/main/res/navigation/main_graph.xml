@@ -18,10 +18,6 @@
         android:name="com.example.pokedex.view.favoritesFragment.FavoritesFragment"
         tools:layout="@layout/fragment_favorites" />
     <fragment
-        android:id="@+id/random_pokemon_fragment"
-        android:name="com.example.pokedex.view.randomPokemonFragment.RandomPokemonFragment"
-        tools:layout="@layout/fragment_random_pokemon" />
-    <fragment
         android:id="@+id/detail_pokemon_fragment"
         android:name="com.example.pokedex.view.detailPokemon.DetailPokemonFragment"
         android:label="fragment_detail_pokemon"

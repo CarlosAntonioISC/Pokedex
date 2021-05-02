@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class HomeViewModel(repo: RepoPokemon): ViewModel() {
+class HomeViewModel(private val repo: RepoPokemon): ViewModel() {
 
 
     val getPokemonList = liveData(Dispatchers.IO) {

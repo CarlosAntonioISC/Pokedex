@@ -25,7 +25,6 @@ class DataSourceImpl: DataSource {
     }
 
     override suspend fun getPokemonFullInfoToAPI(name: String): Resource<Pokemon> {
-
         val result = RetrofitClient.webService.getPokemonByName(name)
         return Resource.Success(result)
     }

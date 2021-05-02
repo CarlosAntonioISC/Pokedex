@@ -9,7 +9,7 @@ import androidx.annotation.ColorInt
 object Drawable {
      fun Drawable.overrideColor(@ColorInt colorInt: Int) {
         when (this) {
-            is GradientDrawable -> setColor(colorInt)
+            is GradientDrawable -> { setColor(colorInt) }
             is ShapeDrawable -> paint.color = colorInt
             is ColorDrawable -> color = colorInt
         }

@@ -12,8 +12,8 @@
 
 
     <item
-        android:id="@+id/random_pokemon_fragment"
-        android:icon="@drawable/ic_help"
-        android:title="@string/title_random" />
+        android:id="@+id/detail_pokemon_fragment"
+        android:icon="@drawable/ic_pokebola"
+        android:title="@string/title_pokemon" />
 
 </menu>

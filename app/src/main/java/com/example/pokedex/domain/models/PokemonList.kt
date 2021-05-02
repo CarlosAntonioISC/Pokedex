@@ -1,5 +1,4 @@
 package com.example.pokedex.domain.models
-import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
@@ -20,5 +19,6 @@ data class PokemonInfo (
         val name: String = "",
         val url: String = "",
         var image: String = "",
-        var color: Int = 0
+        var color: Int = 0,
+        var isRandom: Boolean = true
 ): Parcelable
