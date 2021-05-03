@@ -1,6 +1,6 @@
 package com.example.pokedex.domain.data
 
-import com.example.pokedex.domain.models.Pokemon
+import com.example.pokedex.domain.models.PokemonFullInfo
 import com.example.pokedex.domain.models.PokemonListResponse
 import retrofit2.http.*
 
@@ -11,5 +11,5 @@ interface WebService {
     suspend fun getPokemonList(@Query("limit") limit: Int, @Query("offset") offset: Int): PokemonListResponse
 
     @GET("pokemon/{name}")
-    suspend fun getPokemonByName(@Path("name") name:String): Pokemon
+    suspend fun getPokemonByName(@Path("name") name:String): PokemonFullInfo
 }

@@ -1,7 +1,6 @@
 package com.example.pokedex.view.homeFragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -13,19 +12,30 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.pokedex.R
 import com.example.pokedex.databinding.FragmentHomeBinding
 import com.example.pokedex.domain.data.DataSourceImpl
-import com.example.pokedex.domain.models.PokemonInfo
+import com.example.pokedex.domain.models.Pokemon
 import com.example.pokedex.domain.repository.RepoPokemonImpl
+import com.example.pokedex.utils.AppDatabase
 import com.example.pokedex.utils.Resource
+import com.example.pokedex.view.base.BaseFragment
 import com.example.pokedex.viewModel.HomeViewModel
 import com.example.pokedex.viewModel.VMFactory
 import java.util.*
 
 
-class HomeFragment : Fragment(R.layout.fragment_home), OnPokemonClickListener {
+class HomeFragment: BaseFragment(R.layout.fragment_home) {
 
     private lateinit var binding: FragmentHomeBinding
-    private val viewModel by viewModels<HomeViewModel> { VMFactory(RepoPokemonImpl(DataSourceImpl())) }
     private var adapter: HomeAdapter? = null
+
+    private val viewModel by viewModels<HomeViewModel> {
+        VMFactory(
+            RepoPokemonImpl(
+                DataSourceImpl(
+                    AppDatabase.getDatabase(requireActivity().applicationContext)
+                )
+            )
+        )
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -65,11 +75,9 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnPokemonClickListener {
         binding.rvPokemos.setHasFixedSize(true)
     }
 
-    override fun onPokemonClick(item: PokemonInfo) {
-        val bundle = Bundle()
-        bundle.putParcelable("pokemon", item)
+    override fun onPokemonClick(item: Pokemon) {
         binding.svPokemon.onActionViewCollapsed()
-        findNavController().navigate(R.id.action_home_fragment_to_detailPokemonFragment, bundle)
+        super.onPokemonClick(item)
     }
 
     private fun setupSearchView() {
@@ -95,7 +103,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), OnPokemonClickListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.tvNameApp.visibility = View.VISIBLE
                 binding.svPokemon.onActionViewCollapsed()
-                onPokemonClick(PokemonInfo(name = query!!.toLowerCase(Locale.ROOT)))
+                onPokemonClick(Pokemon(name = query!!.toLowerCase(Locale.ROOT)))
                 return false
             }
 

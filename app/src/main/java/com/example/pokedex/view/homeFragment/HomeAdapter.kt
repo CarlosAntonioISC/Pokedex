@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedex.R
 import com.example.pokedex.domain.models.Pokemon
-import com.example.pokedex.domain.models.PokemonInfo
 import com.example.pokedex.view.base.BaseViewHolder
 
-class HomeAdapter(private var listPokemon: MutableList<PokemonInfo>,
+class HomeAdapter(private var listPokemon: MutableList<Pokemon>,
                   private val onItemClickListener: OnPokemonClickListener,
                   private val context: Context
 )

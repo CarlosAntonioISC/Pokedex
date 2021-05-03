@@ -1,15 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.favoritesFragment.FavoritesFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <LinearLayout
+        android:id="@+id/topLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Lista favoritos" />
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:id="@+id/tvNameApp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/title_favorite_fragment"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="@dimen/mainTitle"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginStart="@dimen/margin_default"
+            />
+    </LinearLayout>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavoritesPokemos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/pokemon_item"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:orientation="vertical"
+        android:layout_below="@+id/topLinearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <include
+        android:id="@+id/include_logo"
+        layout="@layout/progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/topLinearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <TextView
+        android:id="@+id/tvError"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/message_error_pokemon_list"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        app:drawableBottomCompat="@drawable/ic_error" />
+</RelativeLayout>

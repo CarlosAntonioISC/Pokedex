@@ -1,7 +1,7 @@
 package com.example.pokedex.domain.models
 import com.google.gson.annotations.SerializedName
 
-data class Pokemon (
+data class PokemonFullInfo (
         val abilities: List<Ability>,
         val forms: List<Form>,
         val id: Int,
@@ -9,7 +9,6 @@ data class Pokemon (
         val sprites: Sprites,
         val types: List<Type>,
         val weight: Long,
-
 )
 
 data class Moves(val move: Move)

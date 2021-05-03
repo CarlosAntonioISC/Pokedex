@@ -12,18 +12,18 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.pokedex.databinding.PokemonItemBinding
-import com.example.pokedex.domain.models.PokemonInfo
+import com.example.pokedex.domain.models.Pokemon
 import com.example.pokedex.view.base.BaseViewHolder
 import com.example.pokedex.R
 import java.util.*
 
 
 class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonClickListener)
-    : BaseViewHolder<PokemonInfo>(itemView) {
+    : BaseViewHolder<Pokemon>(itemView) {
 
     private val binding = PokemonItemBinding.bind(itemView)
 
-    override fun bind(item: PokemonInfo, position: Int, context: Context) {
+    override fun bind(item: Pokemon, position: Int, context: Context) {
 
         with(binding) {
             tvNamePokemon.text = item.name.capitalize(Locale.ENGLISH)
@@ -36,7 +36,7 @@ class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonC
         }
     }
 
-    private fun loadImage(context: Context, item: PokemonInfo, ivPokemon: ImageView, cvPokemon: CardView){
+    private fun loadImage(context: Context, item: Pokemon, ivPokemon: ImageView, cvPokemon: CardView){
         Glide.with(context)
                 .asBitmap()
                 .load(item.image)

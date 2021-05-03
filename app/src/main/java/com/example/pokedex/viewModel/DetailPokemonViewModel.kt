@@ -2,8 +2,10 @@ package com.example.pokedex.viewModel
 
 import androidx.lifecycle.*
 import com.example.pokedex.domain.contracts.RepoPokemon
+import com.example.pokedex.domain.entities.PokemonEntity
 import com.example.pokedex.utils.Resource
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class DetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
@@ -22,6 +24,12 @@ class DetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
             } catch (e: Exception) {
                 emit(Resource.Failure(e))
             }
+        }
+    }
+
+    fun savePokemon(pokemonEntity: PokemonEntity){
+        viewModelScope.launch {
+            repo.savePokemon(pokemonEntity)
         }
     }
 }

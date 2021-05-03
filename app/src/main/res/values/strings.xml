@@ -14,4 +14,5 @@
     <string name="moves">Moves</string>
     <string name="message_error_pokemon_detail">Ups! Ocurrió un problema buscando al Pokemon</string>
     <string name="message_error_pokemon_list">Ups! Ocurrió un problema con los Pokemons</string>
+    <string name="title_favorite_fragment">Favorites</string>
 </resources>
