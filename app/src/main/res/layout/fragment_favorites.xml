@@ -15,15 +15,16 @@
         >
         <TextView
             android:id="@+id/tvNameApp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/title_favorite_fragment"
             android:textStyle="bold"
-            android:layout_weight="1"
             android:textSize="@dimen/mainTitle"
             android:layout_marginTop="@dimen/margin_default"
             android:layout_marginStart="@dimen/margin_default"
-            />
+            android:drawablePadding="10dp"
+            app:drawableEndCompat="@drawable/ic_favorite"
+            app:drawableTint="@color/red" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -50,6 +51,18 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         />
+
+    <TextView
+        android:id="@+id/tvEmptyList"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message_empty_list"
+        android:textAlignment="center"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_centerInParent="true"
+        android:drawablePadding="@dimen/paddingDrawableSecondary"
+        app:drawableTopCompat="@drawable/ic_favorites" />
 
     <TextView
         android:id="@+id/tvError"

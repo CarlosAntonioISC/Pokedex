@@ -32,4 +32,20 @@ class DetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
             repo.savePokemon(pokemonEntity)
         }
     }
+
+    fun deletePokemon(id: Int){
+        viewModelScope.launch {
+            repo.deletePokemon(id)
+        }
+    }
+
+    fun getFavoritePokemonById(id:Int) = liveData(Dispatchers.IO) {
+        try {
+            emit(repo.getFavoritePokemonById(id))
+        }catch (e: Exception){
+            emit(Resource.Failure(e))
+        }
+    }
+
+
 }

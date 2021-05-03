@@ -23,6 +23,8 @@
            android:textSize="@dimen/mainTitle"
            android:layout_marginTop="@dimen/margin_default"
            android:layout_marginStart="@dimen/margin_default"
+           app:drawableStartCompat="@drawable/ic_logo_app"
+           android:drawablePadding="@dimen/paddingDrawablePrimary"
            />
 
         <androidx.appcompat.widget.SearchView

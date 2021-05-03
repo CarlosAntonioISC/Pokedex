@@ -8,8 +8,10 @@ import com.example.pokedex.utils.Resource
 interface DataSource {
     suspend fun getPokemonListToAPI(): Resource<MutableList<Pokemon>>
     suspend fun getPokemonFullInfoToAPI(name: String): Resource<PokemonFullInfo>
-    suspend fun savePokemonIntoRoom(pokemonEntity: PokemonEntity)
+    suspend fun savePokemon(pokemonEntity: PokemonEntity)
+    suspend fun deletePokemon(id: Int)
     suspend fun getFavoritesPokemon(): Resource<MutableList<PokemonEntity>>
+    suspend fun getFavoritePokemonById(id: Int): Resource<PokemonEntity>
 }
 
 

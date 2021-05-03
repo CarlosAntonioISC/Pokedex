@@ -15,4 +15,8 @@
     <dimen name="sizeImagePokemonDetail">220dp</dimen>
     <dimen name="mainTitle">28sp</dimen>
 
+    <dimen name="paddingDrawablePrimary">10dp</dimen>
+    <dimen name="paddingDrawableSecondary">100dp</dimen>
+
+
 </resources>

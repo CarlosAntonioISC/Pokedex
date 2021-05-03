@@ -31,11 +31,19 @@ class DataSourceImpl(private val appDatabase: AppDatabase): DataSource {
         return Resource.Success(result)
     }
 
-    override suspend fun savePokemonIntoRoom(pokemonEntity: PokemonEntity) {
+    override suspend fun savePokemon(pokemonEntity: PokemonEntity) {
         appDatabase.pokemonDAO().insertFavoritePokemon(pokemonEntity)
     }
 
     override suspend fun getFavoritesPokemon(): Resource<MutableList<PokemonEntity>> {
-        return Resource.Success(appDatabase.pokemonDAO().getFavoritesPokemons())
+        return Resource.Success(appDatabase.pokemonDAO().getFavoritesPokemon())
+    }
+
+    override suspend fun deletePokemon(id: Int) {
+        appDatabase.pokemonDAO().deleteFavoritePokemon(id)
+    }
+
+    override suspend fun getFavoritePokemonById(id: Int): Resource<PokemonEntity> {
+        return Resource.Success(appDatabase.pokemonDAO().getFavoritePokemonById(id))
     }
 }

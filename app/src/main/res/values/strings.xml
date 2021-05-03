@@ -6,13 +6,13 @@
     <string name="title_app">Pokedex</string>
     <string name="search">Buscar</string>
     <string name="pokeball">Pokebola</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="type">Type</string>
     <string name="weight">Weight</string>
     <string name="sprites">Default sprites</string>
     <string name="abilities">Abilities</string>
     <string name="moves">Moves</string>
-    <string name="message_error_pokemon_detail">Ups! Ocurrió un problema buscando al Pokemon</string>
-    <string name="message_error_pokemon_list">Ups! Ocurrió un problema con los Pokemons</string>
+    <string name="message_error_pokemon_detail">Oops! There was a problem searching for the Pokemon</string>
+    <string name="message_error_pokemon_list">Oops! There was a problem with the Pokemons</string>
+    <string name="message_empty_list">You do not have any pokemon stored in your favorites list</string>
     <string name="title_favorite_fragment">Favorites</string>
 </resources>

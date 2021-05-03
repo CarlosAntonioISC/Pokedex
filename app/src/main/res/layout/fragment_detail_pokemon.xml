@@ -190,11 +190,13 @@
 
     <TextView
         android:id="@+id/tvError"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/message_error_pokemon_detail"
         android:layout_centerInParent="true"
+        android:layout_marginHorizontal="@dimen/margin_default"
         android:gravity="center"
-        app:drawableBottomCompat="@drawable/ic_error" />
+        android:drawablePadding="@dimen/paddingDrawableSecondary"
+        app:drawableTopCompat="@drawable/ic_not_found" />
 </RelativeLayout>

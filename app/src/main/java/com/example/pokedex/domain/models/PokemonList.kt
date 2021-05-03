@@ -21,4 +21,5 @@ data class Pokemon (
         val url: String = "",
         var image: String = "",
         var color: Int = 0,
+        var isFavorite: Boolean = false
 ): Parcelable

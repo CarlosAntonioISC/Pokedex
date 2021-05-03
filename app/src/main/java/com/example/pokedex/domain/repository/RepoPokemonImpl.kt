@@ -12,6 +12,7 @@ class RepoPokemonImpl(private val dataSource: DataSource): RepoPokemon{
     override suspend fun getPokemonList(): Resource<MutableList<Pokemon>> {
         return dataSource.getPokemonListToAPI()
     }
+
     override suspend fun getPokemonFullInfo(name: String): Resource<PokemonFullInfo> {
         return dataSource.getPokemonFullInfoToAPI(name)
     }
@@ -20,7 +21,14 @@ class RepoPokemonImpl(private val dataSource: DataSource): RepoPokemon{
         return dataSource.getFavoritesPokemon()
     }
     override suspend fun savePokemon(pokemonEntity: PokemonEntity) {
-        dataSource.savePokemonIntoRoom(pokemonEntity)
+        dataSource.savePokemon(pokemonEntity)
     }
 
+    override suspend fun deletePokemon(id: Int) {
+        dataSource.deletePokemon(id)
+    }
+
+    override suspend fun getFavoritePokemonById(id: Int): Resource<PokemonEntity> {
+        return dataSource.getFavoritePokemonById(id)
+    }
 }

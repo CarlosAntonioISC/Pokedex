@@ -1,6 +1,7 @@
 package com.example.pokedex.view.favoritesFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -48,29 +49,37 @@ class FavoritesFragment : BaseFragment(R.layout.fragment_favorites) {
                 when (it) {
                     is Resource.Loading -> {
                         binding.includeLogo.flProgressBar.visibility = View.VISIBLE
+                        binding.tvEmptyList.visibility = View.GONE
                     }
                     is Resource.Success -> {
                         binding.includeLogo.flProgressBar.visibility = View.GONE
 
-                        val listPokemon = it.data.map { pokemon ->
-                            Pokemon(
-                                pokemon.id,
-                                pokemon.name,
-                                pokemon.url,
-                                pokemon.image,
-                                pokemon.color
+                        if (it.data.isNotEmpty()){
+                            val listPokemon = it.data.map { pokemon ->
+                                Pokemon(
+                                    pokemon.id,
+                                    pokemon.name,
+                                    pokemon.url,
+                                    pokemon.image,
+                                    pokemon.color
+                                )
+                            }
+
+                            Log.d("",listPokemon.toString())
+                            adapter = HomeAdapter(
+                                listPokemon as MutableList<Pokemon>,
+                                this,
+                                requireContext()
                             )
+                            binding.rvFavoritesPokemos.adapter = adapter
+                        }else {
+                            binding.tvEmptyList.visibility = View.VISIBLE
                         }
-                        adapter = HomeAdapter(
-                            listPokemon as MutableList<Pokemon>,
-                            this,
-                            requireContext()
-                        )
-                        binding.rvFavoritesPokemos.adapter = adapter
+
                     }
                     is Resource.Failure -> {
+                        binding.tvEmptyList.visibility = View.GONE
                         binding.includeLogo.flProgressBar.visibility = View.GONE
-                        Toast.makeText(context, "Algo salio mal", Toast.LENGTH_SHORT).show()
                     }
                 }
             })

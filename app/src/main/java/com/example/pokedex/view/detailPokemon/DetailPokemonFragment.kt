@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.CheckBox
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -26,6 +27,7 @@ import com.example.pokedex.utils.Drawable.overrideColor
 import com.example.pokedex.utils.Resource
 import com.example.pokedex.viewModel.DetailPokemonViewModel
 import com.example.pokedex.viewModel.VMFactory
+import androidx.lifecycle.Observer
 import java.util.*
 
 
@@ -40,6 +42,7 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
 
     private lateinit var binding: FragmentDetailPokemonBinding
     private lateinit var pokemon: Pokemon
+
     private val viewModel by viewModels<DetailPokemonViewModel> {
         VMFactory(
             RepoPokemonImpl(
@@ -59,7 +62,8 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
         pokemon = if (arguments != null) {
             requireArguments().getParcelable("pokemon") ?: Pokemon()
         } else {
-            Pokemon(name = (1..898).random().toString())
+            val id = (1..898).random()
+            Pokemon(id = id, name = id.toString())
         }
     }
 
@@ -74,7 +78,20 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
     }
 
     private fun setupObservers() {
-        viewModel.getPokemonInfo.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+
+        viewModel.getFavoritePokemonById(pokemon.id).observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is Resource.Success -> {
+                    pokemon.isFavorite = if(it.data != null) true else false
+                }
+                else -> {
+                    pokemon.isFavorite = false
+                    Log.d("favorito", "No lo encontro")
+                }
+            }
+        })
+
+        viewModel.getPokemonInfo.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Resource.Loading -> {
                     binding.includeLogo.flProgressBar.visibility = View.VISIBLE
@@ -99,6 +116,9 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
     private fun initUI(pokemonFullInfo: PokemonFullInfo) {
         with(binding) {
 
+            cbFavorite.isChecked = pokemon.isFavorite
+
+
             val idPokemon = pokemonFullInfo.id
             val namePokemon = pokemonFullInfo.forms[0].name.capitalize(Locale.ROOT)
             val types = pokemonFullInfo.types
@@ -109,7 +129,11 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
             val allMoves = moves.joinToString(
                 separator = ", ",
                 transform = { it.move.name })
-            val color = setBackgroundColor(ivOvalPokemon, pokemonFullInfo.sprites.other.officialArtwork.image)
+            val color = setBackgroundColor(
+                ivOvalPokemon,
+                pokemonFullInfo.sprites.other.officialArtwork.image
+            )
+
 
             tvIdPokemon.text = "#".plus(idPokemon.toString())
             tvNamePokemon.text = namePokemon
@@ -130,25 +154,39 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
 
             loadImage(image, ivPokemon)
 
+            listenerIconFav(cbFavorite, idPokemon, namePokemon, color, image)
 
-            cbFavorite.setOnClickListener {
+        }
+    }
+
+    private fun listenerIconFav(
+        cbFavorite: CheckBox,
+        id: Int,
+        name: String,
+        color: Int,
+        image: String
+    ) {
+        cbFavorite.setOnClickListener {
+
+            if (pokemon.isFavorite) {
+                viewModel.deletePokemon(pokemon.id)
+            } else {
                 viewModel.savePokemon(
                     PokemonEntity(
-                        id = idPokemon,
-                        name = namePokemon,
+                        id = id,
+                        name = name,
                         color = color,
                         image = image,
                         url = ""
                     )
                 )
             }
+
+            pokemon.isFavorite = !pokemon.isFavorite
         }
     }
 
-    private fun setBackgroundColor(
-        ivOvalPokemon: ImageView,
-        image: String
-    ): Int {
+    private fun setBackgroundColor(ivOvalPokemon: ImageView, image: String): Int {
         if (pokemon.color != 0) {
             ivOvalPokemon.background.overrideColor(pokemon.color)
             return pokemon.color
