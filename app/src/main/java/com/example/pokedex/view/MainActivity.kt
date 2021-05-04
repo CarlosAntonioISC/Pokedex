@@ -17,14 +17,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    private lateinit var searchView: SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         configNav()
-
     }
 
     private fun configNav(){
@@ -33,16 +31,4 @@ class MainActivity : AppCompatActivity() {
         binding.navView.setupWithNavController(navController)
     }
 
-    /**
-     * override fun onSupportNavigateUp(): Boolean {
-    return navController.navigateUp()
-    }
-     */
-
-
-    override fun onBackPressed() {
-
-
-        super.onBackPressed()
-    }
 }

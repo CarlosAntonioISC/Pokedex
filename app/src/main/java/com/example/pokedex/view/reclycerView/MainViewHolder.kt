@@ -1,4 +1,4 @@
-package com.example.pokedex.view.homeFragment
+package com.example.pokedex.view.reclycerView
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -18,7 +18,7 @@ import com.example.pokedex.R
 import java.util.*
 
 
-class HomeViewHolder(itemView: View, private val onItemClickListener: OnPokemonClickListener)
+class MainViewHolder(itemView: View, private val onItemClickListener: OnPokemonClickListener)
     : BaseViewHolder<Pokemon>(itemView) {
 
     private val binding = PokemonItemBinding.bind(itemView)

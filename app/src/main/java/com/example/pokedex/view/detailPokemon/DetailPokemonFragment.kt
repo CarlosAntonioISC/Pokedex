@@ -17,12 +17,12 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.pokedex.R
 import com.example.pokedex.databinding.FragmentDetailPokemonBinding
-import com.example.pokedex.domain.data.DataSourceImpl
-import com.example.pokedex.domain.entities.PokemonEntity
+import com.example.pokedex.domain.datasource.DataSourceImpl
+import com.example.pokedex.domain.models.entities.PokemonEntity
 import com.example.pokedex.domain.models.PokemonFullInfo
 import com.example.pokedex.domain.models.Pokemon
 import com.example.pokedex.domain.repository.RepoPokemonImpl
-import com.example.pokedex.utils.AppDatabase
+import com.example.pokedex.domain.datasource.database.AppDatabase
 import com.example.pokedex.utils.Drawable.overrideColor
 import com.example.pokedex.utils.Resource
 import com.example.pokedex.viewModel.DetailPokemonViewModel

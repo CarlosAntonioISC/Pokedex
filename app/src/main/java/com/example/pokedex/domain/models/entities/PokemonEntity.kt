@@ -1,8 +1,7 @@
-package com.example.pokedex.domain.entities
+package com.example.pokedex.domain.models.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.pokedex.domain.models.*
 
 @Entity
 data class PokemonEntity(

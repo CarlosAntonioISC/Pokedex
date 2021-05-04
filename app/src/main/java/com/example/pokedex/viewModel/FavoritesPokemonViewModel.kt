@@ -2,7 +2,7 @@ package com.example.pokedex.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.pokedex.domain.contracts.RepoPokemon
+import com.example.pokedex.domain.repository.RepoPokemon
 import com.example.pokedex.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception

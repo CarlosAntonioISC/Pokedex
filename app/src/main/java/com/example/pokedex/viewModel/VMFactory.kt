@@ -2,7 +2,7 @@ package com.example.pokedex.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.pokedex.domain.contracts.RepoPokemon
+import com.example.pokedex.domain.repository.RepoPokemon
 
 class VMFactory(private val repo: RepoPokemon): ViewModelProvider.Factory{
 

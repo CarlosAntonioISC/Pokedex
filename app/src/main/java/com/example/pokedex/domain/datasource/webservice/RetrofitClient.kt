@@ -1,6 +1,5 @@
-package com.example.pokedex.utils
+package com.example.pokedex.domain.datasource.webservice
 
-import com.example.pokedex.domain.data.WebService
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

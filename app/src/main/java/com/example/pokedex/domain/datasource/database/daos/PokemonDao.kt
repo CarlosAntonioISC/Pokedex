@@ -1,8 +1,7 @@
-package com.example.pokedex.domain.daos
+package com.example.pokedex.domain.datasource.database.daos
 
 import androidx.room.*
-import com.example.pokedex.domain.entities.PokemonEntity
-import retrofit2.http.GET
+import com.example.pokedex.domain.models.entities.PokemonEntity
 
 @Dao
 interface PokemonDao {

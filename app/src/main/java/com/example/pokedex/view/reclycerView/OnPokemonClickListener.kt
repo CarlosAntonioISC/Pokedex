@@ -1,4 +1,4 @@
-package com.example.pokedex.view.homeFragment
+package com.example.pokedex.view.reclycerView
 
 import com.example.pokedex.domain.models.Pokemon
 

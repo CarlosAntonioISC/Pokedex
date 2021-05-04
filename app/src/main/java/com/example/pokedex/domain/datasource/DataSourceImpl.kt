@@ -1,14 +1,14 @@
-package com.example.pokedex.domain.data
+package com.example.pokedex.domain.datasource
 
-import com.example.pokedex.domain.contracts.DataSource
-import com.example.pokedex.domain.entities.PokemonEntity
+import com.example.pokedex.domain.models.entities.PokemonEntity
 import com.example.pokedex.domain.models.PokemonFullInfo
 import com.example.pokedex.domain.models.Pokemon
-import com.example.pokedex.utils.AppDatabase
+import com.example.pokedex.domain.datasource.database.AppDatabase
 import com.example.pokedex.utils.Resource
-import com.example.pokedex.utils.RetrofitClient
+import com.example.pokedex.domain.datasource.webservice.RetrofitClient
 
-class DataSourceImpl(private val appDatabase: AppDatabase): DataSource {
+class DataSourceImpl(private val appDatabase: AppDatabase):
+    DataSource {
 
     override suspend fun getPokemonListToAPI(): Resource<MutableList<Pokemon>> {
         val pokemonListResponse = RetrofitClient.webService.getPokemonList(limit = 1118, offset = 0)
