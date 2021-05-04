@@ -69,5 +69,6 @@
         android:text="@string/message_error_pokemon_list"
         android:layout_centerInParent="true"
         android:gravity="center"
-        app:drawableBottomCompat="@drawable/ic_error" />
+        android:drawablePadding="@dimen/paddingDrawableSecondary"
+        app:drawableTopCompat="@drawable/ic_not_found" />
 </RelativeLayout>

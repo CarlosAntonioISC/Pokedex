@@ -190,7 +190,7 @@
 
     <TextView
         android:id="@+id/tvError"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/message_error_pokemon_detail"
