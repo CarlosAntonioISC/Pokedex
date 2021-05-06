@@ -1,32 +1,20 @@
 package app.carlosisc.pokedex.view.reclycerView
 
-import android.content.Context
-import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import app.carlosisc.pokedex.domain.models.Pokemon
+import app.carlosisc.pokedex.view.base.BaseAdapter
 import app.carlosisc.pokedex.view.base.BaseViewHolder
+import app.carlosisc.pokedex.view.base.OnAdapterClickListener
 import com.carlosisc.pokedex.R
 
-class MainAdapter(private var listPokemon: MutableList<Pokemon>,
-                  private val onItemClickListener: OnPokemonClickListener,
-                  private val context: Context
-)
-    : RecyclerView.Adapter<BaseViewHolder<*>>() {
+class MainAdapter(private val listener: OnAdapterClickListener<Pokemon>): BaseAdapter<Pokemon>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return MainViewHolder(
-            layoutInflater.inflate(R.layout.pokemon_item, parent, false),
-            onItemClickListener
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Pokemon> {
+        val view = getViewFromLayout(parent, R.layout.pokemon_item)
+        return MainViewHolder(view)
     }
 
-    override fun getItemCount(): Int = listPokemon.size
-
-    override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
-        when (holder) {
-            is MainViewHolder -> holder.bind(listPokemon[position], position, context)
-        }
+    override fun onBindViewHolder(holder: BaseViewHolder<Pokemon>, position: Int) {
+        holder.bind(mItems[position], position, listener)
     }
 }

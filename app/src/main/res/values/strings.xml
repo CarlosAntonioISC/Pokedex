@@ -15,4 +15,6 @@
     <string name="message_error_pokemon_list">Oops! There was a problem with the Pokemons</string>
     <string name="message_empty_list">You do not have any pokemon stored in your favorites list</string>
     <string name="title_favorite_fragment">Favorites</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

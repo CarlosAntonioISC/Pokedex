@@ -58,11 +58,8 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
                 }
                 is Resource.Success -> {
                     binding.includeLogo.flProgressBar.visibility = View.GONE
-                    adapter = MainAdapter(
-                        it.data,
-                        this,
-                        requireContext()
-                    )
+                    adapter = MainAdapter(this)
+                    adapter?.updateData(it.data)
                     binding.rvPokemos.adapter = adapter
                 }
                 is Resource.Failure -> {
@@ -78,9 +75,9 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
         binding.rvPokemos.setHasFixedSize(true)
     }
 
-    override fun onPokemonClick(item: Pokemon) {
+    override fun onClickItem(item: Pokemon) {
         binding.svPokemon.onActionViewCollapsed()
-        super.onPokemonClick(item)
+        super.onClickItem(item)
     }
 
     private fun setupSearchView() {
@@ -106,7 +103,7 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.tvNameApp.visibility = View.VISIBLE
                 binding.svPokemon.onActionViewCollapsed()
-                onPokemonClick(Pokemon(name = query!!.toLowerCase(Locale.ROOT)))
+                onClickItem(Pokemon(name = query!!.toLowerCase(Locale.ROOT)))
                 return false
             }
 

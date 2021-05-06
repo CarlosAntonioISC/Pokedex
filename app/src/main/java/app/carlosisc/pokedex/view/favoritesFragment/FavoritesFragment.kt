@@ -60,12 +60,8 @@ class FavoritesFragment : BaseFragment(R.layout.fragment_favorites) {
                                     pokemon.color
                                 )
                             }
-                            adapter =
-                                MainAdapter(
-                                    listPokemon as MutableList<Pokemon>,
-                                    this,
-                                    requireContext()
-                                )
+                            adapter = MainAdapter(this)
+                            adapter?.updateData(listPokemon as MutableList<Pokemon>,)
                             binding.rvFavoritesPokemos.adapter = adapter
                         }else {
                             binding.tvEmptyList.visibility = View.VISIBLE

@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.detailPokemon
+package app.carlosisc.pokedex.view.detailPokemonFragment
 
 
 import android.graphics.Bitmap
