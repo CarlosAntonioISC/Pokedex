@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class zDetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
+class DetailPokemonViewModel(private val repo: RepoPokemon): ViewModel() {
 
     private val  namePokemon = MutableLiveData<String>()
 
