@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.detailPokemonFragment
+package app.carlosisc.pokedex.iu.views
 
 
 import android.graphics.Bitmap
@@ -89,7 +89,6 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
                 }
                 else -> {
                     pokemon.isFavorite = false
-                    Log.d("favorito", "No lo encontro")
                 }
             }
         })
@@ -102,10 +101,10 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
                     binding.nsInfoPokemon.visibility = View.GONE
                 }
                 is Resource.Success -> {
+                    initUI(it.data)
                     binding.includeLogo.flProgressBar.visibility = View.GONE
                     binding.tvError.visibility = View.GONE
                     binding.nsInfoPokemon.visibility = View.VISIBLE
-                    initUI(it.data)
                 }
                 is Resource.Failure -> {
                     binding.includeLogo.flProgressBar.visibility = View.GONE

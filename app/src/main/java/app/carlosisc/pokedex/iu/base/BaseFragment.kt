@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.base
+package app.carlosisc.pokedex.iu.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

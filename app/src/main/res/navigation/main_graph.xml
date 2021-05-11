@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="app.carlosisc.pokedex.view.homeFragment.HomeFragment"
+        android:name="app.carlosisc.pokedex.iu.views.HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_fragment_to_detailPokemonFragment"
@@ -15,11 +15,11 @@
     </fragment>
     <fragment
         android:id="@+id/favorites_fragment"
-        android:name="app.carlosisc.pokedex.view.favoritesFragment.FavoritesFragment"
+        android:name="app.carlosisc.pokedex.iu.views.FavoritesFragment"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/detail_pokemon_fragment"
-        android:name="app.carlosisc.pokedex.view.detailPokemonFragment.DetailPokemonFragment"
+        android:name="app.carlosisc.pokedex.iu.views.DetailPokemonFragment"
         android:label="fragment_detail_pokemon"
         tools:layout="@layout/fragment_detail_pokemon" />
 </navigation>

@@ -7,8 +7,7 @@ import app.carlosisc.pokedex.domain.datasource.database.AppDatabase
 import app.carlosisc.pokedex.utils.Resource
 import app.carlosisc.pokedex.domain.datasource.webservice.RetrofitClient
 
-class DataSourceImpl(private val appDatabase: AppDatabase):
-    DataSource {
+class DataSourceImpl(private val appDatabase: AppDatabase): DataSource {
 
     override suspend fun getPokemonListToAPI(): Resource<MutableList<Pokemon>> {
         val pokemonListResponse = RetrofitClient.webService.getPokemonList(limit = 1118, offset = 0)

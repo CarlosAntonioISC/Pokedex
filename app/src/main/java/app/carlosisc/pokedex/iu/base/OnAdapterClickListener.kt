@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.base
+package app.carlosisc.pokedex.iu.base
 
 interface OnAdapterClickListener<T> {
     fun onClickItem(item: T)

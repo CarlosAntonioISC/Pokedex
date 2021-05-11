@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view
+package app.carlosisc.pokedex.iu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

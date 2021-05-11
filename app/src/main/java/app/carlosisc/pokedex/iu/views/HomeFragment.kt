@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.homeFragment
+package app.carlosisc.pokedex.iu.views
 
 import android.os.Bundle
 import android.view.View
@@ -12,8 +12,8 @@ import app.carlosisc.pokedex.domain.models.Pokemon
 import app.carlosisc.pokedex.domain.repository.RepoPokemonImpl
 import app.carlosisc.pokedex.domain.datasource.database.AppDatabase
 import app.carlosisc.pokedex.utils.Resource
-import app.carlosisc.pokedex.view.base.BaseFragment
-import app.carlosisc.pokedex.view.reclycerView.MainAdapter
+import app.carlosisc.pokedex.iu.base.BaseFragment
+import app.carlosisc.pokedex.iu.reclycerView.MainAdapter
 import app.carlosisc.pokedex.viewModel.HomeViewModel
 import app.carlosisc.pokedex.viewModel.VMFactory
 import com.carlosisc.pokedex.R

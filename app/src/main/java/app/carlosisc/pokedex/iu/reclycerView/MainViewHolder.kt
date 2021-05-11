@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.view.reclycerView
+package app.carlosisc.pokedex.iu.reclycerView
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,8 +9,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.palette.graphics.Palette
 import app.carlosisc.pokedex.domain.models.Pokemon
-import app.carlosisc.pokedex.view.base.BaseViewHolder
-import app.carlosisc.pokedex.view.base.OnAdapterClickListener
+import app.carlosisc.pokedex.iu.base.BaseViewHolder
+import app.carlosisc.pokedex.iu.base.OnAdapterClickListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.carlosisc.pokedex.R
@@ -46,8 +46,8 @@ class MainViewHolder(itemView: View) : BaseViewHolder<Pokemon>(itemView) {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     ivPokemon.setImageBitmap(resource)
 
-                    Palette.from(resource).generate {
-                        val color = it?.getMutedColor(
+                    Palette.from(resource).generate { palette ->
+                        val color = palette?.getMutedColor(
                             ContextCompat.getColor(
                                 context,
                                 R.color.default_background_color
