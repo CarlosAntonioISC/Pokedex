@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.iu.reclycerView
+package app.carlosisc.pokedex.ui.reclycerView
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,8 +9,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.palette.graphics.Palette
 import app.carlosisc.pokedex.domain.models.Pokemon
-import app.carlosisc.pokedex.iu.base.BaseViewHolder
-import app.carlosisc.pokedex.iu.base.OnAdapterClickListener
+import app.carlosisc.pokedex.ui.base.BaseViewHolder
+import app.carlosisc.pokedex.ui.base.OnAdapterClickListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.carlosisc.pokedex.R
