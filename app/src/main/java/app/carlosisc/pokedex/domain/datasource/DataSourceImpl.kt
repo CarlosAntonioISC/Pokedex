@@ -1,5 +1,7 @@
 package app.carlosisc.pokedex.domain.datasource
 
+import android.util.Log
+import android.widget.Toast
 import app.carlosisc.pokedex.domain.models.entities.PokemonEntity
 import app.carlosisc.pokedex.domain.models.PokemonFullInfo
 import app.carlosisc.pokedex.domain.models.Pokemon
@@ -10,6 +12,7 @@ import app.carlosisc.pokedex.domain.datasource.webservice.RetrofitClient
 class DataSourceImpl(private val appDatabase: AppDatabase): DataSource {
 
     override suspend fun getPokemonListToAPI(): Resource<MutableList<Pokemon>> {
+
         val pokemonListResponse = RetrofitClient.webService.getPokemonList(limit = 1118, offset = 0)
 
         //get the pokemon image in another api passing the pokemon id

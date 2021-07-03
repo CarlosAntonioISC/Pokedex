@@ -1,4 +1,4 @@
-package app.carlosisc.pokedex.iu.base
+package app.carlosisc.pokedex.ui.base
 
 import android.view.LayoutInflater
 import android.view.View

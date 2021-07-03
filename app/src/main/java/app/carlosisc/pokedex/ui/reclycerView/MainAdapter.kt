@@ -1,10 +1,10 @@
-package app.carlosisc.pokedex.iu.reclycerView
+package app.carlosisc.pokedex.ui.reclycerView
 
 import android.view.ViewGroup
 import app.carlosisc.pokedex.domain.models.Pokemon
-import app.carlosisc.pokedex.iu.base.BaseAdapter
-import app.carlosisc.pokedex.iu.base.BaseViewHolder
-import app.carlosisc.pokedex.iu.base.OnAdapterClickListener
+import app.carlosisc.pokedex.ui.base.BaseAdapter
+import app.carlosisc.pokedex.ui.base.BaseViewHolder
+import app.carlosisc.pokedex.ui.base.OnAdapterClickListener
 import com.carlosisc.pokedex.R
 
 class MainAdapter(private val listener: OnAdapterClickListener<Pokemon>): BaseAdapter<Pokemon>() {

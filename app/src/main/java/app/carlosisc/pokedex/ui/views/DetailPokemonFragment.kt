@@ -1,10 +1,9 @@
-package app.carlosisc.pokedex.iu.views
+package app.carlosisc.pokedex.ui.views
 
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.ImageView
@@ -62,7 +61,7 @@ class DetailPokemonFragment : Fragment(R.layout.fragment_detail_pokemon) {
          * 'Pokemon'
          */
         pokemon = if (arguments != null) {
-            requireArguments().getParcelable("pokemon") ?: Pokemon()
+            arguments?.getParcelable("pokemon") ?: Pokemon()
         } else {
             val id = (1..898).random()
             Pokemon(id = id, name = id.toString())

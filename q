@@ -1,0 +1,128 @@
+[33mcommit a38cb6d01523770d947b95d08c78d8e5ac011a62[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 11 09:03:33 2021 -0500
+
+    bug fix
+
+[33mcommit c7404dd712c3ac74772f45b0fa82a82e6869995d[m
+Merge: 4e8a454 9efd70f
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 11 09:02:29 2021 -0500
+
+    Merge branch 'main' of https://github.com/CarlosAntonioISC/Pokedex
+
+[33mcommit 4e8a4544153ad2804efc9c7a0a02633a68768ef2[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 11 09:01:50 2021 -0500
+
+    Rename package
+
+[33mcommit 9efd70fbc55ebaf7aa3218e42832eb74618f149d[m
+Author: José Carlos Antonio Juárez <66087014+CarlosAntonioISC@users.noreply.github.com>
+Date:   Sat May 8 09:35:06 2021 -0500
+
+     The url of the images in the readme was changed
+
+[33mcommit f26e866612fdf0784943ab0d4d1e436b57811939[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Thu May 6 16:21:35 2021 -0500
+
+    Implemented BaseAdapter
+
+[33mcommit a5feba5d46618f86b91481a39d7e490a38ab11bd[m
+Merge: 1d0bb27 1459a80
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 4 15:40:23 2021 -0500
+
+    Merge branch 'main' of https://github.com/CarlosAntonioISC/Pokedex
+
+[33mcommit 1d0bb27c833c6cd31ef18af4adf0b1cdf956cc7a[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 4 15:09:19 2021 -0500
+
+    the folders were renamed com.example
+
+[33mcommit 1459a802ca0ed7cc02ff24ad91623ad5e3677fc0[m
+Author: José Carlos Antonio Juárez <66087014+CarlosAntonioISC@users.noreply.github.com>
+Date:   Tue May 4 11:07:03 2021 -0500
+
+    Image delete
+
+[33mcommit 32c713ba0f4407ca0f0cac6fd1fa9c13655ada75[m
+Merge: 2f3487b 98d1fa7
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 4 11:02:19 2021 -0500
+
+    Merge branch 'main' of https://github.com/CarlosAntonioISC/Pokedex
+
+[33mcommit 2f3487b82d4d30740b97f88a0e50ca4839f3bbc4[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 4 10:27:40 2021 -0500
+
+    Files are organized in a better structure
+
+[33mcommit 98d1fa70a6b17a635f39df0e413a812ff0994869[m
+Author: José Carlos Antonio Juárez <66087014+CarlosAntonioISC@users.noreply.github.com>
+Date:   Tue May 4 10:03:01 2021 -0500
+
+    Update Readme
+
+[33mcommit 9e87612a1707df7849cc1aa2401e2e7610c1cf14[m
+Author: José Carlos Antonio Juárez <66087014+CarlosAntonioISC@users.noreply.github.com>
+Date:   Tue May 4 08:53:30 2021 -0500
+
+    Initial commit
+
+[33mcommit 7193200ebb7df538fca181aaec4f7afbdbb85942[m[33m ([m[1;33mtag: v1.0.0[m[33m)[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Tue May 4 08:47:50 2021 -0500
+
+    Icon Application added
+
+[33mcommit 39a4757a158a269355cfd535675903c3d991df7d[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Mon May 3 12:32:58 2021 -0500
+
+    Remove pokemon to favorites implementation added and XML layout improvements were added
+
+[33mcommit fd1c0c655140715703c9ee3a667516fc3ea0f055[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Mon May 3 09:23:04 2021 -0500
+
+    Database implementation added, FavoritesFragment added without remove pokemon function
+
+[33mcommit 7b5e1834ccc8b7675f440212965e54dc611399b3[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Sun May 2 08:36:55 2021 -0500
+
+    SearchView implementation added
+
+[33mcommit 25fab0f04c15a601360419e4fcbf7e68a24166dd[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Thu Apr 29 09:27:49 2021 -0500
+
+    Fragmen Detail finished
+
+[33mcommit bfcd07a7fe960d5ab609be609368348fcc8e1ad7[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Wed Apr 28 08:47:39 2021 -0500
+
+    Palette class added
+
+[33mcommit 9d786cb85528ecd098cc482660be5b3a23cfe219[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Mon Apr 26 12:14:09 2021 -0500
+
+    Recycler View added and, Repo, DataSource, and Retrofit implemented
+
+[33mcommit ffd037c05ac31ae6a472e2079de9000948d35aec[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Thu Apr 22 08:50:30 2021 -0500
+
+    Bottom Nav Bar and Layout Recycler View finished
+
+[33mcommit 1feee319cec6d16a6a43e5db546016e30a80c772[m
+Author: Carlos Antonio <carlos.antonio.isc@gmail.com>
+Date:   Wed Apr 21 10:47:01 2021 -0500
+
+    First Commit

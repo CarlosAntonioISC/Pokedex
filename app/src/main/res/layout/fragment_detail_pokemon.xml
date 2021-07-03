@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    tools:context=".view.detailPokemon.DetailPokemonFragment">
+    android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsInfoPokemon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         >
 
         <LinearLayout
@@ -66,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:button="@drawable/states_ic_fav"
                     android:buttonTint="@android:color/white"
+                    android:checked="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"/>
 
@@ -185,7 +184,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:visibility="visible"
+        android:visibility="gone"
         />
 
     <TextView

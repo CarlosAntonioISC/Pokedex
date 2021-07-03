@@ -1,10 +1,9 @@
-package app.carlosisc.pokedex.iu
+package app.carlosisc.pokedex.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.carlosisc.pokedex.R
 import com.carlosisc.pokedex.databinding.ActivityMainBinding
 
